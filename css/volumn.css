@@ -1,0 +1,56 @@
+/* .header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  } */
+
+
+  /* .header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  }
+  
+  /* Page Content */
+  /* .content {padding:20px;} */ 
+
+  
+  .header {
+    margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  background: hsl(118, 76%, 42%);
+  /* color: white; */
+  font-size:10px;
+  }
+  
+  .content {padding:20px;}
+  
+  .style{
+  
+  
+  }
+  .wrap{
+    width: 1000px;
+    margin:auto;
+    margin-top: 100px;
+  }
+  
+  .Kelvin{
+    /* width: 1000px;
+    margin:auto;
+    margin-top: 100px; */
+    margin-left: 550px;
+  }
+  .Fahrenheit{
+    /* width: 1000px;
+    margin:auto;
+    margin-top: 100px; */
+  }
+  .wrap{
+    margin-left: 600px;
+  }
