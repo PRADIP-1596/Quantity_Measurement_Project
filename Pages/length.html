@@ -1,114 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <div>
-        <link rel="stylesheet" href="../css/length.css">
-    </div>
+ <head>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
+    <!-- <title>Document</title> -->
+    <link rel="stylesheet" href="../CSS/length.css">
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+   
 </head>
 
 <body>
-
-    <div class="main">
-        <!-- <div class="header"> -->
-        <!-- <div class="content">
-       <h2 style= "margin-left: 180px;"><b>Quanment</b></h2>
-          
-       <h5 style="text-align: right; margin-right: 180px;">History</h5> 
-        <div class="header">
-         <i class="fa fa-bars"></i> -->
-        <!-- <h4>Welcome To Quantity Mesurement</h4>
-      </div> -->
-        <!-- <div class="type">
-        <i class="fa fa-bars"></i> -->
-        <!-- <h4>CHOOSE TYPE</h4> -->
+    <div class="header">
+        <h3>Quantum</h3>
+        <h4>history</h4>
+    </div>
+    <div id="welcome">
+        welcome to quantity measurements
     </div>
 
-
-    <div className="homeContainer">
-
-        <div class="content">
-            <h2 style="margin-left: 180px;"><b>Quanment</b></h2>
-
-            <h5 style="text-align: right; margin-right: 180px;">History</h5>
-            <AppBar id="appBar">
-                <h2> Welcome To Quantity Measurement</h2>
-            </AppBar>
-            <div class="type">
-                <!-- <i class="fa fa-bars"></i> -->
-                <h4>CHOOSE TYPE</h4>
+    <div class="typebody">
+        <div class="choosebody">
+            choose type</div>
+        <div class="cardbody">
+            <div class="box1 ">
+                <img id="image1">
+                Length
             </div>
-
-            <div class="row">
-                <div class="col-md-4">
-
-
-                </div>
+            <div class="box2">
+                <img id="image2">
+                Temperature
             </div>
-
-            <div className="cardContainer">
-
-                <Card id="length">
-                    <div>
-                        <img src="../Assets/length.png" alt="">
-                    </div>
-                    <div>
-                        Length
-                    </div>
-                </Card>
-
-                <Card id="temperatures">
-                    <div>
-                        <img src="../Assets/hot.svg" alt="">
-                    </div>
-                    <div>
-                        temperatures
-                    </div>
-                </Card>
-                <Card id="volumns">
-                    <div>
-                        <img src="../Assets/beaker.svg" alt="">
-                    </div>
-                    <div>
-                        volumns
-                    </div>
-                </Card>
+            <div class="box3">
+                <img  id="image3">
+                 Volume
             </div>
         </div>
-    </div>
-    </div>
-    <div id="containerForData">
-        <div>
-            <div id="text">
-                <br />
-                <lable>FROM</lable><br />
-            </div>
-            <div>
-                <TextField className="TextField"></TextField>
-            </div>
-            <div>
-                <Select id="Select">
-
-
-                </Select>
-            </div>
+        <div class="form">
+        <div class="from">
+            <h3>from</h3>
+            <input type="number" id="input">
+            <select id="select">
+            </select>
         </div>
-        <div>
-            <div id="text">
-                <br />
-                <lable>To</lable><br />
-            </div>
-            <div>
-                <TextField className="TextField"></TextField>
-            </div>
-            <div>
-                <Select id="Select">
-
-                </Select>
-            </div>
+        <div class="to">
+            <h3>to</h3>
+            <input type="number" id="result">
+            <select id="select1">
+            </select>
         </div>
-    </div>
+        </div>
     </div>
 </body>
-
 </html>
