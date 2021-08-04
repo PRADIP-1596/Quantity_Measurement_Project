@@ -1,0 +1,22 @@
+<div>
+        <!-- Fromm input -->
+        <input type="text" onkeypress="measureQuantity(this)"/> 
+    </div>
+    <div>
+        <!-- to input -->
+        <input type="text" id="too"/> 
+    </div>
+
+
+    const measureQuantity = (e) =>{
+    console.log(e.value)
+    //if length to cm lcm()
+    // if lm()
+    document.getElementById("too").value=e.value;
+}
+const  lcm=()=>{
+
+}
+const  lcm=()=>{
+
+}
