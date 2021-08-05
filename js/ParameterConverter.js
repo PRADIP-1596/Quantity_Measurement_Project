@@ -1,14 +1,16 @@
 
+
 var input = document.getElementById('input');
 var result = document.getElementById('result');
 var inputType = document.getElementById('select');
 var resultType = document.getElementById('select1');
 var inputTypeValue, resultTypeValue;
-const examplefunction=(e)=>{
-    console.log(e);
-}
 
-$(document).ready(function () {
+// <!------------------------------------------------>
+
+
+//--------------------function is used reload web page whole in jquery 
+ $(document).ready(function () {                    
 	var lengthoptions = ["meter", "centimeter", "millimeter", "kilometer", "mile"];
 	$(length = () => {
 		input.value = 1;
@@ -26,6 +28,8 @@ $(document).ready(function () {
 		$("#image3").attr({style: "content:url(../assets/beaker.svg)" });
 
 	})
+
+	// -----------------------------------------------------------------------------------------
 	$(".box1").click(length);
 	var temperatureoptions = ["Celsius", "Fahrenheit", "Kelvin"];
 	$(".box2").click(() => {
@@ -38,14 +42,36 @@ $(document).ready(function () {
 		});
 		$(".box2").addClass("card2");
 		$(".box1").removeClass("card1");
-	
+		$(".box3").removeClass("card3");
 		$("#image1").attr({style: "content:url(../assets/scalebw.svg)" });
 		$("#image2").attr({style: "content:url(../assets/hotcolour.svg" });
-	
+		$("#image3").attr({style: "content:url(../assets/beaker.svg)" });
 	});
 
+	// -------------------------------------------------------------------------------------------------
+	var volumeoptions = ["Litres", "Millilitres", "Galons"];
+	$(".box3").click(() => {
+		input.value = 1;
+		result.value = 1000;
+		$("#select").empty();
+		$("#select1").empty();
+		$.each(volumeoptions, function (index, value) {
+			selection(value,"Millilitres");
+		});
+		$(".box3").addClass("card3");
+		$(".box1").removeClass("card1");
+		$(".box2").removeClass("card2");
+		$("#image1").attr({style: "content:url(../assets/scalebw.svg)" });
+		$("#image2").attr({style: "content:url(../assets/hot\ \(1\).svg)" });
+		$("#image3").attr({style: "content:url(../assets/beakercolour.svg)" });
+
+	});
 
 });
+// ----------------------------------------------------------------------------------------------
+
+
+// decclared arrow function
 const selection = (value,select,number)=>{
 	if (value == select) {
 		$("#select1").append(`<option selected> ` + value + `</option>` + '<br>');
@@ -53,29 +79,30 @@ const selection = (value,select,number)=>{
 	}
 	else {
 		$("#select").append(`<option>` + value + `</option>` + '<br>');
-	 	$("#select1").append(`<option>` + value + `</option>` + '<br>');
+		$("#select1").append(`<option>` + value + `</option>` + '<br>');
 	}
 
 };
-
+// ---------------------------------------------------------------------------------------------------------
 input.addEventListener("keyup", myResult);
-inputType.addEventListener("", myResult);
-resultType.addEventListener("", myResult);
+inputType.addEventListener("change", myResult);
+resultType.addEventListener("change", myResult);
 
 
-inputTypeValue = inputType.value;
-resultTypeValue = resultType.value;
+inputTypeValue = inputType.value=	result.value;
+ resultType.value=	result.value;
+  
 
-
-function    DecalredResult() {
+function myResult() {
 
 	inputTypeValue = inputType.value;
 	resultTypeValue = resultType.value;
-
+	
+//   Length all logic Conversion Parameters
 	if (inputTypeValue === "meter" && resultTypeValue === "kilometer") {
 
 		result.value = Number(input.value) * 0.001;
-	} else if (inputTypeValue === "meter" && resultTypeValue === "centimeter") {
+ b  													} else if (inputTypeValue === "meter" && resultTypeValue === "centimeter") {
 
 		result.value = Number(input.value) * 100;
 
@@ -145,7 +172,74 @@ function    DecalredResult() {
 	} else if (inputTypeValue === "micrometer" && resultTypeValue === "mile") {
 		result.value = Number(input.value) * 6.2137e-10;
 	}
- 
-	
-} 
-	
+
+    //  TemperatureConverter all Logic 
+	if (inputTypeValue === "Celsius" && resultTypeValue === "Celsius") {
+		result.value = input.value;
+	} else if (inputTypeValue === "Celsius" && resultTypeValue === "Fahrenheit") {
+		result.value = (Number(input.value) * 9 / 5) + 32;
+		;
+	} else if (inputTypeValue === "Celsius" && resultTypeValue === "Kelvin") {
+		result.value = Number(input.value) + 273.15;
+	}
+	if (inputTypeValue === "Fahrenheit" && resultTypeValue === "Celsius") {
+		result.value = (Number(input.value) - 32) * 5 / 9;
+	} else if (inputTypeValue === "Fahrenheit" && resultTypeValue === "Fahrenheit") {
+		result.value = input.value;
+	} else if (inputTypeValue === "Fahrenheit" && resultTypeValue === "Kelvin") {
+		result.value = (Number(input.value) - 32) * 5 / 9 + 273.15;
+	}
+
+	if (inputTypeValue === "Kelvin" && resultTypeValue === "Celsius") {
+		result.value = Number(input.value) - 273.15;
+	} else if (inputTypeValue === "Kelvin" && resultTypeValue === "Fahrenheit") {
+		result.value = (Number(input.value) - 459.67);
+	} else if (inputTypeValue === "Kelvin" && resultTypeValue === "Kelvin") {
+		result.value = input.value;
+	}
+
+ //Volumn For All Logic
+
+//  switch (resultType.value,inputType.value) {
+// 	case 0:
+// 		if (inputTypeValue === "Kelvin" && resultTypeValue === "Celsius") {
+// 			result.value = Number(input.value) - 273.15;
+// 		} else if (inputTypeValue === "Kelvin" && resultTypeValue === "Fahrenheit") {
+// 			result.value = (Number(input.value) - 459.67);
+// 		} else if (inputTypeValue === "Kelvin" && resultTypeValue === "Kelvin") {
+// 			result.value = input.value;
+// 		}
+// 	case 1:
+// 	  $('#txtConsole').val("Some Val 1");
+// 	  break;
+// 	case 2:
+// 	  $('#txtConsole').text("Some Val 2");
+// 	  break;
+//   }
+
+  // volume converter logic 
+  if (inputTypeValue === "Litres" && resultTypeValue === "Millilitres") {
+	result.value = Number(input.value) * 1000;
+} else if (inputTypeValue === "Litres" && resultTypeValue === "Galons") {
+	result.value = (Number(input.value) * 0.219969);
+} else if (inputTypeValue === "Litres" && resultTypeValue === "Litres") {
+	result.value = input.value;
+}
+
+if (inputTypeValue === "Millilitres" && resultTypeValue === "Millilitres") {
+	result.value = input.value;
+} else if (inputTypeValue === "Millilitres" && resultTypeValue === "Galons") {
+	result.value = (Number(input.value) * 0.000219969);
+} else if (inputTypeValue === "Millilitres" && resultTypeValue === "Litres") {
+	result.value = Number(input.value) * 0.001;
+}
+
+if (inputTypeValue === "Galons" && resultTypeValue === "Millilitres") {
+	result.value = Number(input.value) * 4546.09;
+} else if (inputTypeValue === "Galons" && resultTypeValue === "Litres") {
+	result.value = (Number(input.value) * 4.54609);
+} else if (inputTypeValue === "Galons" && resultTypeValue === "Galons") {
+	result.value = input.value;
+}
+
+}
