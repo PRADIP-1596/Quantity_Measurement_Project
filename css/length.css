@@ -198,17 +198,21 @@ body {
         
     }
     
-    .cardbody {
-        margin: 0px 27%;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        background-color: #F5F6FA;
-    }
+  
     
-    .box1, .box2, .box3 {
+
+        .cardbody {
+            margin: 0px 27%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #F5F6FA;
+        }
+        
+
+     .box1, .box2, .box3 {
         margin: 5% 0px;
-        width: 150px;
+      
         height: 150px;
         border: 1px solid #FFFFFF;
         display: flex;
@@ -220,7 +224,7 @@ body {
         background-color: white;
         color: rgb(184, 179, 179);
     }
-    
+    @media only screen and (min-width: 320px) {
     .box1 img {
         content: url("../assets/scalebw.svg");
         margin-top: 10px;
@@ -285,10 +289,10 @@ body {
         border-color: #7224FF;
         color: #7224FF;
     }
-    
+}
 
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
     .form{
         flex-direction: column;
         align-items: center;
