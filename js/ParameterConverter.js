@@ -73,7 +73,6 @@ input.addEventListener("keyup", myResult);
 inputType.addEventListener("change", myResult);
 resultType.addEventListener("change", myResult);
 
-
 inputTypeValue = inputType.value;
 resultType.value = result.value;
 
@@ -89,12 +88,12 @@ function myResult() {
 	if (inputTypeValue === "meter" && resultTypeValue === "kilometer") {
 
 		result.value = Number(input.value) * 0.001;
-
-
+	        input.value = Number(result.value) * 0.001;
 	}
 	else if (inputTypeValue === "meter" && resultTypeValue === "centimeter") {
 
 		result.value = Number(input.value) * 100;
+		input.value = Number(result.value) * 0.001;
 
 	} else if (inputTypeValue === "meter" && resultTypeValue === "meter") {
 		result.value = input.value
