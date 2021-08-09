@@ -71,13 +71,84 @@ const selection = (value, select, number) => {
 // ---------------------------------------------------------------------------------------------------------
 input.addEventListener("keyup", myResult);
 inputType.addEventListener("change", myResult);
-resultType.addEventListener("change", myResult);
+// resultType.addEventListener("change", myResult);
+resultType.addEventListener("change", myResult1);
 
 
 inputTypeValue = inputType.value;
 resultType.value = result.value;
 
 //function calling
+function myResult1() {
+	// input.value=10000;
+
+	inputTypeValue = inputType.value;
+	resultTypeValue = resultType.value;
+
+	//   Length all logic Conversion Parameters
+	if (inputTypeValue === "meter" && resultTypeValue === "kilometer") {
+
+		input.value = Number(result.value) * 0.001;
+
+
+	}
+	else if (inputTypeValue === "meter" && resultTypeValue === "centimeter") {
+
+		input.value = Number(result.value) * 100;
+
+	} else if (inputTypeValue === "meter" && resultTypeValue === "meter") {
+		input.value = result.value
+	} else if (inputTypeValue === "meter" && resultTypeValue === "millimeter") {
+		input.value = Number(result.value) * 1000;
+	} else if (inputTypeValue === "meter" && resultTypeValue === "micrometer") {
+		input.value = Number(result.value) * 1000000;
+	} else if (inputTypeValue === "meter" && resultTypeValue === "mile") {
+		input.value = Number(result.value) * 0.000621371;
+	}
+
+	if (inputTypeValue === "centimeter" && resultTypeValue === "kilometer") {
+		input.value = Number(result.value) * 0.00001;
+	} else if (inputTypeValue === "centimeter" && resultTypeValue === "meter") {
+		input.value = Number(result.value) * 0.01;
+	} else if (inputTypeValue === "centimeter" && resultTypeValue === "centimeter") {
+		input.value = result.value
+	} else if (inputTypeValue === "centimeter" && resultTypeValue === "millimeter") {
+		input.value = Number(result.value) * 10;
+	} else if (inputTypeValue === "centimeter" && resultTypeValue === "micrometer") {
+		input.value = Number(result.value) * 10000;
+	} else if (inputTypeValue === "centimeter" && resultTypeValue === "mile") {
+		input.value = Number(result.value) * 6.2137e-6;
+	}
+
+	if (inputTypeValue === "millimeter" && resultTypeValue === "kilometer") {
+		input.value = Number(result.value) * 1e-6;
+	} else if (inputTypeValue === "millimeter" && resultTypeValue === "meter") {
+		input.value = Number(result.value) * 0.001;
+	} else if (inputTypeValue === "millimeter" && resultTypeValue === "centimeter") {
+		input.value = Number(result.value) * 0.1;
+	} else if (inputTypeValue === "millimeter" && resultTypeValue === "millimeter") {
+		input.value = result.value;
+	} else if (inputTypeValue === "millimeter" && resultTypeValue === "micrometer") {
+		input.value = Number(result.value) * 1000;
+	} else if (inputTypeValue === "millimeter" && resultTypeValue === "mile") {
+		input.value = Number(result.value) * 6.2137e-7;
+	}
+
+	if (inputTypeValue === "micrometer" && resultTypeValue === "kilometer") {
+		input.value = Number(result.value) * 1e-9;
+	} else if (inputTypeValue === "micrometer" && resultTypeValue === "meter") {
+		input.value = Number(result.value) * 1e-6;
+	} else if (inputTypeValue === "micrometer" && resultTypeValue === "centimeter") {
+		input.value = Number(result.value) * 1e-4;
+	} else if (inputTypeValue === "micrometer" && resultTypeValue === "millimeter") {
+		input.value = Number(result.value) * 0.001;
+	} else if (inputTypeValue === "micrometer" && resultTypeValue === "micrometer") {
+		input.value = result.value;
+	} else if (inputTypeValue === "micrometer" && resultTypeValue === "mile") {
+		input.value = Number(result.value) * 6.2137e-10;
+	}
+
+}
 
 
 function myResult() {
@@ -235,3 +306,4 @@ function myResult() {
 	}
  
 }
+
