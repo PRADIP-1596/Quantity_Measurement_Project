@@ -15,7 +15,8 @@ $(document).ready(function () {
 	
 //    length parameter  declared here
 	var lengthoptions = ["meter", "centimeter", "millimeter", "kilometer", "mile"];
-	$(length = () => {
+	// $(length = () => {
+		$(".box1").click(() => {
 		input.value = 1;
 		result.value = 100;
 		$("#select").empty();
@@ -147,6 +148,57 @@ function myResult1() {
 	} else if (inputTypeValue === "micrometer" && resultTypeValue === "mile") {
 		input.value = Number(result.value) * 6.2137e-10;
 	}
+    
+	//  TemperatureConverter all Logic 
+	if (inputTypeValue === "Celsius" && resultTypeValue === "Celsius") {
+		input.value = result.value;
+	} else if (inputTypeValue === "Celsius" && resultTypeValue === "Fahrenheit") {
+		input.value = (Number(result.value) * 9 / 5) + 32;
+		;
+	} else if (inputTypeValue === "Celsius" && resultTypeValue === "Kelvin") {
+		input.value= Number(result.value) + 273.15;
+	}
+	if (inputTypeValue === "Fahrenheit" && resultTypeValue === "Celsius") {
+		input.value = (Number(result.value) - 32) * 5 / 9;
+	} else if (inputTypeValue === "Fahrenheit" && resultTypeValue === "Fahrenheit") {
+		input.value = result.value;
+	} else if (inputTypeValue === "Fahrenheit" && resultTypeValue === "Kelvin") {
+		input.value= (Number(result.value) - 32) * 5 / 9 + 273.15;
+	}
+
+	if (inputTypeValue === "Kelvin" && resultTypeValue === "Celsius") {
+		input.value= Number(result.value) - 273.15;
+	} else if (inputTypeValue === "Kelvin" && resultTypeValue === "Fahrenheit") {
+		input.value = (Number(result.value) - 459.67);
+	} else if (inputTypeValue === "Kelvin" && resultTypeValue === "Kelvin") {
+		input.value = result.value;
+	}
+
+	// volume conversion for all  logic 
+	if (inputTypeValue === "Litres" && resultTypeValue === "Millilitres") {
+		input.value = Number(result.value) * 1000;
+	} else if (inputTypeValue === "Litres" && resultTypeValue === "Galons") {
+		input.value= (Number(result.value) * 0.219969);
+	} else if (inputTypeValue === "Litres" && resultTypeValue === "Litres") {
+		input.value = input.value;
+	}
+
+	if (inputTypeValue === "Millilitres" && resultTypeValue === "Millilitres") {
+		input.value = result.value;
+	} else if (inputTypeValue === "Millilitres" && resultTypeValue === "Galons") {
+		input.value = (Number(result.value) * 0.000219969);
+	} else if (inputTypeValue === "Millilitres" && resultTypeValue === "Litres") {
+		input.value = Number(result.value) * 0.001;
+	}
+
+	if (inputTypeValue === "Galons" && resultTypeValue === "Millilitres") {
+		input.value = Number(result.value) * 4546.09;
+	} else if (inputTypeValue === "Galons" && resultTypeValue === "Litres") {
+		input.value = (Number(result.value) * 4.54609);
+	} else if (inputTypeValue === "Galons" && resultTypeValue === "Galons") {
+		input.value = result.value;
+	}
+ 
 
 }
 
